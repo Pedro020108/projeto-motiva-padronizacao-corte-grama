@@ -1,6 +1,6 @@
 # MOTIVA — API de Monitoramento de Rodovias
 
-## 📌 Sobre o projeto
+## Sobre o projeto
 
 O MOTIVA é um sistema de monitoramento de rodovias desenvolvido para auxiliar no gerenciamento de trechos rodoviários, equipes de manutenção e intervenções operacionais.
 
@@ -8,7 +8,7 @@ Nesta Sprint 4, o projeto foi migrado de uma aplicação baseada em console e JD
 
 A aplicação permite cadastrar, consultar, atualizar e excluir registros, além de gerar relatórios de prioridade com base no nível de vegetação dos trechos monitorados.
 
-## 🎯 Objetivos
+## Objetivos
 
 - Desenvolver uma API REST utilizando Spring Boot.
 - Aplicar o padrão de arquitetura em camadas.
@@ -18,7 +18,7 @@ A aplicação permite cadastrar, consultar, atualizar e excluir registros, além
 - Gerar e armazenar relatórios de prioridade.
 - Validar dados e tratar exceções da aplicação.
 
-## 🛠️ Tecnologias utilizadas
+## Tecnologias utilizadas
 
 - **Java 17**
 - **Spring Boot 4.1.1**
@@ -30,7 +30,7 @@ A aplicação permite cadastrar, consultar, atualizar e excluir registros, além
 - **Postman** para testes dos endpoints
 - **Git e GitHub** para versionamento do projeto
 
-## 🏗️ Arquitetura do projeto
+## Arquitetura do projeto
 
 O projeto está organizado em camadas, separando as responsabilidades para facilitar a manutenção e a evolução do sistema.
 
@@ -52,7 +52,7 @@ src/main/java/br/motiva/
 - **Controller:** disponibiliza os endpoints REST e recebe as requisições HTTP.
 - **Exception:** contém o tratamento centralizado de exceções da API.
 
-## 🗄️ Banco de dados
+## Banco de dados
 
 A aplicação utiliza o banco de dados Oracle e as tabelas criadas nas sprints anteriores.
 
@@ -88,7 +88,7 @@ spring.jpa.properties.hibernate.format_sql=true
 
 O projeto utiliza `spring.jpa.hibernate.ddl-auto=none` para evitar que o Hibernate tente criar ou alterar automaticamente as tabelas existentes.
 
-## ▶️ Como executar o projeto
+## Como executar o projeto
 
 ### Pré-requisitos
 
@@ -214,7 +214,7 @@ Para consultar por período, utilize datas e horários no formato ISO, por exemp
 
 `/api/relatorios/periodo?inicio=2026-10-01T00:00:00&fim=2026-10-31T23:59:59`
 
-## 🚦 Regras de prioridade
+## Regras de prioridade
 
 A classificação dos trechos é definida pelo nível de vegetação:
 
@@ -227,7 +227,7 @@ A classificação dos trechos é definida pelo nível de vegetação:
 
 A aplicação utiliza essas faixas para contar os trechos em cada categoria durante a geração dos relatórios.
 
-## 🧪 Exemplos de requisições cURL
+## Exemplos de requisições cURL
 
 Os exemplos abaixo consideram a aplicação executando localmente na porta 8080.
 
@@ -325,7 +325,7 @@ curl "http://localhost:8080/api/relatorios/periodo?inicio=2026-10-01T00:00:00&fi
 
 Os IDs utilizados nos exemplos são ilustrativos e devem ser ajustados aos registros existentes no banco de dados.
 
-## ⚠️ Validações e tratamento de erros
+## Validações e tratamento de erros
 
 A aplicação realiza validações para impedir operações com dados inválidos, como:
 
@@ -350,7 +350,7 @@ Entre os códigos HTTP utilizados estão:
 | 400 | Requisição inválida ou erro de validação tratado. |
 | 404 | Recurso não encontrado. |
 
-## 📸 Evidências de testes
+## Evidências de testes
 
 Os testes da API podem ser demonstrados por meio de capturas de tela do Postman, mostrando a requisição, a URL, o status HTTP e a resposta recebida.
 
@@ -365,7 +365,7 @@ Recomenda-se registrar pelo menos seis evidências, contemplando:
 
 As capturas devem corresponder a testes realmente executados. Se as evidências forem armazenadas no repositório, podem ser organizadas em uma pasta chamada `evidencias-postman/`.
 
-## 💡 Reflexões sobre o desenvolvimento
+## Reflexões sobre o desenvolvimento
 
 ### 1. Por que utilizar uma interface Repository em vez de implementar todas as operações manualmente?
 
@@ -383,13 +383,13 @@ Essa validação representa uma regra de negócio e, por isso, deve ficar na cam
 
 O SQL não precisa ser escrito manualmente em um arquivo específico. O Spring Data JPA interpreta o nome do método `findByTipoIgnoreCase()` declarado na interface Repository e gera a consulta necessária para buscar intervenções pelo tipo, ignorando diferenças entre letras maiúsculas e minúsculas. O Hibernate atua na geração e execução do SQL correspondente.
 
-## 📚 Aprendizados
+## Aprendizados
 
 Durante o desenvolvimento, foram trabalhados conceitos de construção de APIs REST, arquitetura em camadas, persistência com Spring Data JPA, integração com Oracle, consultas derivadas, validação de dados, tratamento de exceções e testes de endpoints com o Postman.
 
 A migração também permitiu compreender melhor a diferença entre acessar o banco de dados manualmente e utilizar um framework de persistência para reduzir código repetitivo e organizar as responsabilidades da aplicação.
 
-## 👥 Integrantes
+## Integrantes
 
 - Pedro Mirabella Tonarque
 - Pedro Henrique Marques
